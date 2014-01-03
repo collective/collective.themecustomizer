@@ -14,13 +14,13 @@
     <input type="radio" value="remove" class="noborder"
        tal:attributes="name string:${view/name}.action;
                id string:${view/name}.delete;
-               onclick string:document.getElementById('${view/name}').disabled=true;" />   
+               onclick string:document.getElementById('${view/name}').disabled=true;" />
     <label tal:attributes="for string:${view/name}.replace">Remove existing image</label>
     <br />
     <input type="radio" value="replace" class="noborder"
        tal:attributes="name string:${view/name}.action;
                id string:${view/name}.replace;
-               onclick string:document.getElementById('${view/name}').disabled=false;" />   
+               onclick string:document.getElementById('${view/name}').disabled=false;" />
     <label tal:attributes="for string:${view/name}.replace">Replace with new image</label>
   </div>
   <div tal:attributes="style python:exists and 'padding-left: 1.5em;; padding-top: 0.5em;;' or nothing">

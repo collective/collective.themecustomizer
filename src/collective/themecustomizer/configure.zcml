@@ -6,6 +6,8 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include package="plone.app.controlpanel" />
+
   <include package=".browser" />
   <include file="profiles.zcml" />
 
