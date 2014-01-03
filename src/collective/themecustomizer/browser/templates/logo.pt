@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<head>
+
+    <metal:styleslot fill-slot="style_slot">
+        <style type="text/css" media="screen">
+        #avpw_controls {
+            top: -12px !important;
+            height: 700px;
+        }
+        .template-atct_image_transform #content-core {
+            position: relative;
+            min-height: 700px;
+        }
+        body .avpw {
+            border: 1px solid #fff;
+            background: #fff;
+        }
+        </style>
+    </metal:styleslot>
+    <metal:javascriptslot fill-slot="javascript_head_slot">
+        <script type="text/javascript" src="//dme0ih8comzn4.cloudfront.net/js/feather.js"></script>
+        <script type="text/javascript" tal:content="view/javascript">
+        // Aviary Feather settings
+        </script>
+        <script type="text/javascript">
+            function launchEditor() {
+                featherEditor.launch({
+                    image: 'transform-image',
+                    appendTo: 'content-core',
+                    noCloseButton: true,
+                    onSave: function(imageID, newURL) {
+                        document.location = $('base').attr('href') + '/@@aviary_save?imageUrl=' + encodeURIComponent(newURL);
+                    },
+                    onError: function(errorObj) {
+                        alert(errorObj.message);
+                    },
+                });
+                return false;
+            }
+        </script>
+    </metal:javascriptslot>
+    <metal:override fill-slot="top_slot"
+        tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                    disable_column_two python:request.set('disable_plone.rightcolumn',1);"/>
+</head>
+<body>
+
+<metal:main fill-slot="main" tal:define="image nocall:here;
+                                         size python:here.getObjSize(here)">
+    <div id="content-core">
+        <img src="#" alt="" tal:replace="structure python:here.tag(scale='large', style='margin:auto; display:block;')" />
+        <img src="#" alt="" tal:replace="structure python:here.tag(id='transform-image', style='display:none;')" />
+    </div>
+
+</metal:main>
+
+</body>
+</html>

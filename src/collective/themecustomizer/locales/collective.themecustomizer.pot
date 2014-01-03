@@ -1,0 +1,47 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2014-01-03 18:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: collective/themecustomizer/interfaces.py:31
+msgid ""
+msgstr ""
+
+#: collective/themecustomizer/interfaces.py:30
+msgid "Display logo in Header"
+msgstr ""
+
+#: collective/themecustomizer/interfaces.py:17
+msgid "Display text in Header"
+msgstr ""
+
+#: collective/themecustomizer/interfaces.py:18
+msgid "Displays site title and description on every site pages."
+msgstr ""
+
+#: collective/themecustomizer/interfaces.py:37
+msgid "Header background image"
+msgstr ""
+
+#: collective/themecustomizer/interfaces.py:24
+msgid "Imagem do Logo"
+msgstr ""
+
+#: collective/themecustomizer/interfaces.py:25
+msgid "Insira nesse campo o logo do tema local"
+msgstr ""
+
