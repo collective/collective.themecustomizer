@@ -46,9 +46,9 @@ To enable this package in a buildout-based installation:
 After updating the configuration you need to run ''bin/buildout'', which will
 take care of updating your system.
 
-Go to the 'Site Setup' page in a Plone site and click on the 'Add-ons' link.
+Go to the **Site Setup** page in a Plone site and click on the **Add-ons** link.
 
-Check the box next to ``collective.themecustomizer`` and click the 'Activate'
+Check the box next to ``collective.themecustomizer`` and click the **Activate**
 button.
 
 .. Note::
