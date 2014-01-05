@@ -6,6 +6,10 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class LogoViewlet(BaseViewlet):
+    """ Custom plone.logo viewlet to show/hide logo image and
+    site title and description
+    """
+
     index = ViewPageTemplateFile('templates/logo.pt')
 
     def update(self):
@@ -31,6 +35,8 @@ class LogoViewlet(BaseViewlet):
 
 
 class HeaderViewlet(BaseViewlet):
+    """ Custom plone.header viewlet to show/hide background image
+    """
 
     def logo_background_style(self):
         portal = api.portal.get()

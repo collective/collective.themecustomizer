@@ -3,6 +3,9 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plone">
 
+  <!-- Move plone.site_actions viewlet from IPortalFooter to
+  IPortalHeader
+  -->
   <browser:viewlet
       name="plone.site_actions"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"

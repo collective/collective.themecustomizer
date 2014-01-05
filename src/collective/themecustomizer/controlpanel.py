@@ -14,8 +14,13 @@ from zope.interface import implements
 
 
 class SiteControlPanelAdapter(SchemaAdapterBase):
+    """This is a copy of p.a.controlpanel.site.SiteControlPanelAdapter
+    with the additional code for the fields we are adding as theme
+    customization options.
     """
-    """
+
+    # TODO: Move this code to theme controlpanel?
+
     adapts(IPloneSiteRoot)
     implements(ISiteSchema)
 
@@ -53,45 +58,50 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
         else:
             self.context.webstats_js = ''
 
+    def _get_image(self, filename):
+        """ Generic code for getting an image by filename
+        """
+        return self.portal.get(filename)
+
+    def _set_image(self, image, filename):
+        """ Create or update OFS.Image.Image object at portal root
+        """
+        # TODO: Store image in registry or other sensible place?
+        if not image:
+            return True
+        if image == 'remove':
+            self.portal.manage_delObjects([filename])
+            return True
+        # Does image already exists?
+        content = [i.getId() for i in self.portal.objectValues()]
+        if not filename in content:
+            self.portal.manage_addImage(filename, image, filename)
+            return True
+        else:
+            img = self.portal.get(filename)
+            img.update_data(image)
+            return True
+        return False
+
     def get_image(self):
-        return self.portal.get('logo.png')
+        """ Get the logo.png image created by setter
+        """
+        return self._get_image('logo.png')
 
     def set_image(self, image):
-        if not image:
-            return True
-        if image == 'remove':
-            self.portal.manage_delObjects(['logo.png'])
-            return True
-        # verifica se a imagem existe
-        conteudo = [i.getId() for i in self.portal.objectValues()]
-        if not 'logo.png' in conteudo:
-            self.portal.manage_addImage('logo.png', image, 'logo.png')
-            return True
-        else:
-            img = self.portal.get('logo.png')
-            img.update_data(image)
-            return True
-        return False
+        """ Create or update a logo.png image provided by user
+        """
+        return self._set_image(image, 'logo.png')
 
     def get_background(self):
-        return self.portal.get('background.png')
+        """ Get the background.png image created by setter
+        """
+        return self._get_image('background.png')
 
     def set_background(self, image):
-        if not image:
-            return True
-        if image == 'remove':
-            self.portal.manage_delObjects(['background.png'])
-            return True
-        # verifica se a imagem existe
-        conteudo = [i.getId() for i in self.portal.objectValues()]
-        if not 'background.png' in conteudo:
-            self.portal.manage_addImage('background.png', image, 'background.png')
-            return True
-        else:
-            img = self.portal.get('background.png')
-            img.update_data(image)
-            return True
-        return False
+        """ Create or update a background.png image provided by user
+        """
+        return self._set_image(image, 'background.png')
 
     site_title = property(get_site_title, set_site_title)
     site_description = property(get_site_description, set_site_description)

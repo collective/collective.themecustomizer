@@ -59,7 +59,16 @@ TBD.
 To-do list
 ----------
 
-TBD.
+- Use English for strings everywhere.
+
+- Provide a preview scale of the image in the imagewidget
+
+- Separate imagewidget to a new package
+
+- Move customization options to theme controlpanel or a new configlet
+
+- Store customizations in registry
+
 
 Not entirely unlike
 ===================

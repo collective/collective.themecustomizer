@@ -5,9 +5,13 @@ from zope.formlib.textwidgets import FileWidget
 
 
 class ImageWidget(FileWidget):
-    """The standard FileWidget returns a string instead of an IFile inst,
-    which means it will always fail schema validation in formlib.
+    """Custom implementation of ImageWidget
     """
+
+    # The standard FileWidget returns a string instead of an IFile inst,
+    # which means it will always fail schema validation in formlib.
+
+    # TODO: Provide a preview scale of the image in the template
 
     template = ViewPageTemplateFile('templates/imagewidget.pt')
     displayWidth = 30
