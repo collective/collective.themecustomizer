@@ -58,7 +58,7 @@ button.
 Usage
 -----
 
-Once installed ``collective.themecustomizer`` go to **Site controlpanel** to
+Once ``collective.themecustomizer`` is installed go to **Site controlpanel** to
 find the customization options:
 
 - Display text in Header
