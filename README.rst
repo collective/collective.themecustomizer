@@ -7,7 +7,11 @@ collective.themecustomizer
 Life, the Universe, and Everything
 ==================================
 
-Theme customizer for Plone.
+``collective.themecustomizer`` provides some simple but very useful customizations
+of a Plone site theme in an intuitive interface known by any site administrator.
+
+Additionally ``portal.site_actions`` viewlet, originally only in ``plone.portalfooter``
+manager, is displayed in ``plone.portalheader`` as well.
 
 Mostly Harmless
 ===============
@@ -54,10 +58,23 @@ button.
 Usage
 -----
 
-TBD.
+Once installed ``collective.themecustomizer`` go to **Site controlpanel** to
+find the customization options:
+
+- Display text in Header
+
+- Logo image
+
+- Display logo in Header
+
+- Header background image
+
+After saving your preferences you'll see your desired options already applied.
 
 To-do list
 ----------
+
+- Provide even more theme customizations like footer text and colors.
 
 - Use English for strings everywhere.
 
