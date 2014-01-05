@@ -11,7 +11,7 @@ install:
   - sed -ie "s#travis-4.x.cfg#travis-$PLONE_VERSION.x.cfg#" travis.cfg
   - mkdir -p buildout-cache/downloads
   - python bootstrap.py -c travis.cfg
-  - bin/buildout annotate -c travis.cfg
+  - bin/buildout -c travis.cfg annotate
   # workaround for failing installation under Plone 4.1
   - test -v QA && bin/buildout -c travis.cfg -N -q || bin/buildout -c travis.cfg -N -q buildout:parts-=code-analysis
 before_script:
@@ -19,9 +19,9 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - firefox -v
 script:
-  - test -v QA && bin/code-analysis || true
+  - test $QA && bin/code-analysis || true
   - bin/test
-after_success: test -v QA && bin/coverage.sh && pip install -q coveralls && coveralls || true
-after_failure: firefox -v
+after_success:
+  - test $QA && bin/coverage.sh && pip install -q coveralls && coveralls || true
 notifications:
   irc: irc.freenode.org#simplesconsultoria
