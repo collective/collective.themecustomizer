@@ -68,6 +68,14 @@ find the customization options:
 
 After saving your preferences you'll see your desired options already applied.
 
+How it works
+------------
+
+The package overrides ``plone.logo`` and ``plone.header`` viewlets (via a
+custom **browserlayer**) respecting their default behavior, in case no
+customization was made yet.
+
+
 To-do list
 ----------
 
