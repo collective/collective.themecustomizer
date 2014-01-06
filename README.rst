@@ -90,4 +90,13 @@ To-do list
 Not entirely unlike
 ===================
 
-TBD.
+`CSSManager`_
+    Provides a simple interface to tweak logo and CSS properties by 
+    overriding old ``base_properties`` sheet, which is not used by 
+    Plone 4 default Sunburst theme.
+    Although it works if you choose **Plone Classic Theme** in a Plone 4 site
+    theme settings.
+    If you want to install it you'll have to manually add ``elementtree``
+    to the ``eggs`` section in your buildout file.
+
+.. _`CSSManager`: https://pypi.python.org/pypi/Products.CSSManager
