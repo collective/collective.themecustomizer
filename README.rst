@@ -99,4 +99,10 @@ Not entirely unlike
     If you want to install it you'll have to manually add ``elementtree``
     to the ``eggs`` section in your buildout file.
 
+`Products.CustomOverrides`_
+    Allows content managers to inject custom stylesheets and Javascript
+    that will be added to choosen folder and its descendants.
+    It requieres CSS and JS knowledge.
+
 .. _`CSSManager`: https://pypi.python.org/pypi/Products.CSSManager
+.. _`Products.CustomOverrides`: https://pypi.python.org/pypi/Products.CustomOverrides
