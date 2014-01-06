@@ -41,5 +41,4 @@ class ImageWidgetTestCase(unittest.TestCase):
         widget = ImageWidget(field, request)
 
         self.assertEqual(widget.getInputValue(), 'remove')
-        import pdb; pdb.set_trace()
         self.assertEqual(widget(), RENDERED)
