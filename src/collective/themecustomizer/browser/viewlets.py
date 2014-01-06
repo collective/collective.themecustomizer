@@ -15,23 +15,25 @@ class LogoViewlet(BaseViewlet):
     def update(self):
         super(LogoViewlet, self).update()
 
-        portal = self.portal_state.portal()
-        bprops = portal.restrictedTraverse('base_properties', None)
-        if bprops is not None:
-            logoName = bprops.logoName
-        else:
-            logoName = 'logo.jpg'
+        portal = api.portal.get()
 
-        logoTitle = self.portal_state.portal_title()
-        self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle)
         self.navigation_root_title = self.portal_state.navigation_root_title()
 
-        if logoName not in portal:
-            self.logo_tag = '<img src="{0}/{1}" alt="{2}" title="{2}" height="80" width="80" />'.format(
-                portal.absolute_url(),
-                '++resource++collective.themecustomizer/images/logo.png',
-                logoTitle
-            )
+        logoTitle = self.portal_state.portal_title()
+
+        # If there already is a customized logo.png image in portal root, use it
+        if portal.get('logo.png'):
+            self.logo_tag = portal.get('logo.png').tag(title=logoTitle, alt=logoTitle)
+        else:
+            # If not, get the logo filename from base_properties, if found
+            bprops = portal.restrictedTraverse('base_properties', None)
+            if bprops is not None:
+                logoName = bprops.logoName
+            else:
+                # If not found, use Plone 4 default logo filename
+                logoName = 'logo.jpg'
+
+            self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle)
 
 
 class HeaderViewlet(BaseViewlet):

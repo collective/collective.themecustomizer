@@ -11,7 +11,7 @@
 
 
 <div id="titleHeader"
-     tal:condition="context/portal_properties/site_properties/show_header_text|python:True">
+     tal:condition="context/portal_properties/site_properties/show_header_text|python:False">
     <div id="siteTitle" tal:content="python: view.portal_state.portal().Title()"></div>
     <div id="siteDescription" tal:content="python: view.portal_state.portal().Description()"></div>
 </div>
