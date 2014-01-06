@@ -15,14 +15,16 @@ class ISiteSchema(IBaseSiteSchema):
 
     show_header_text = schema.Bool(
         title=_(u'Display text in Header'),
-        description=_(u'Displays site title and description on every site pages.'),
+        description=_(u'Displays site title and description on every site page.'),
         required=False,
-        default=True,
+        default=False,
     )
 
     image = schema.Bytes(
-        title=_(u'Imagem do Logo'),
-        description=_(u'Insira nesse campo o logo do tema local'),
+        title=_(u'Logo image'),
+        description=_(u'The image you upload will replace current site\'s logo. '
+                      'Once saved, if you want to get back the original one, just'
+                      'remove your chosen image.'),
         required=False,
     )
 
