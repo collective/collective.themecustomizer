@@ -10,9 +10,6 @@ Life, the Universe, and Everything
 ``collective.themecustomizer`` provides some simple but very useful customizations
 of a Plone site theme in an intuitive interface known by any site administrator.
 
-Additionally ``portal.site_actions`` viewlet, originally only in ``plone.portalfooter``
-manager, is displayed in ``plone.portalheader`` as well.
-
 Mostly Harmless
 ===============
 
