@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2014-01-03 18:17+0000\n"
+"POT-Creation-Date: 2014-01-06 20:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,31 +17,31 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: collective/themecustomizer/interfaces.py:31
+#: ./interfaces.py:33
 msgid ""
 msgstr ""
 
-#: collective/themecustomizer/interfaces.py:30
+#: ./interfaces.py:32
 msgid "Display logo in Header"
 msgstr ""
 
-#: collective/themecustomizer/interfaces.py:17
+#: ./interfaces.py:17
 msgid "Display text in Header"
 msgstr ""
 
-#: collective/themecustomizer/interfaces.py:18
-msgid "Displays site title and description on every site pages."
+#: ./interfaces.py:18
+msgid "Displays site title and description on every site page."
 msgstr ""
 
-#: collective/themecustomizer/interfaces.py:37
+#: ./interfaces.py:39
 msgid "Header background image"
 msgstr ""
 
-#: collective/themecustomizer/interfaces.py:24
-msgid "Imagem do Logo"
+#: ./interfaces.py:24
+msgid "Logo image"
 msgstr ""
 
-#: collective/themecustomizer/interfaces.py:25
-msgid "Insira nesse campo o logo do tema local"
+#: ./interfaces.py:25
+msgid "The image you upload will replace current site's logo. Once saved, if you want to get back the original one, justremove your chosen image."
 msgstr ""
 
