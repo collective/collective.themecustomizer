@@ -69,6 +69,13 @@ Test themecustomizer settings
     Click Button  Deactivate
     Everything Looks Good  50  50
 
+    [Documentation]  Event site-controlpanel is less configurable
+    Enable Autologin as  Site Administrator
+    Go To  ${PLONE_URL}/@@site-controlpanel
+    Page Should Not Contain Element  id=form.show_header_text
+    Page Should Not Contain Element  id=form.show_header_logo
+    Page Should Not Contain Element  id=form.image
+    Page Should Not Contain Element  id=form.background
 
 *** Keywords ***
 
