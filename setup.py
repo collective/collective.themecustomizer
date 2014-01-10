@@ -19,7 +19,6 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
-        'Framework :: Plone :: 4.1',
         'Framework :: Plone :: 4.2',
         'Framework :: Plone :: 4.3',
         'Framework :: Plone',
@@ -43,11 +42,11 @@ setup(
     zip_safe=False,
     install_requires=[
         'plone.api',
+        'plone.app.controlpanel',
+        'plone.app.layout',
         'plone.app.registry',
-        'plone.directives.form',
         'plone.i18n',
-        'plone.registry',
-        'Products.CMFPlone >=4.1',
+        'Products.CMFPlone >=4.2',
         'Products.GenericSetup',
         'setuptools',
         'zope.component',
@@ -58,12 +57,9 @@ setup(
     extras_require={
         'test': [
             'plone.app.robotframework',
-            'plone.app.testing',
+            'plone.app.testing [robot] >=4.2.2',
             'plone.browserlayer',
-            'plone.registry',
             'plone.testing',
-            'robotsuite',
-            'unittest2',
         ],
     },
     entry_points="""
