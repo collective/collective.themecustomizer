@@ -25,6 +25,13 @@ class InstallTestCase(unittest.TestCase):
         layers = [l.getName() for l in registered_layers()]
         self.assertIn('IThemeCustomizer', layers)
 
+    def test_site_properties_registered(self):
+        site_properties = self.portal['portal_properties'].site_properties
+        self.assertTrue(hasattr(site_properties, 'show_header_text'))
+        self.assertFalse(site_properties.show_header_text)
+        self.assertTrue(hasattr(site_properties, 'show_header_logo'))
+        self.assertTrue(site_properties.show_header_logo)
+
     def test_static_resource_directory(self):
         app = self.layer['app']
 
@@ -51,3 +58,8 @@ class UninstallTestCase(unittest.TestCase):
     def test_addon_layer_is_unregistered(self):
         layers = [l.getName() for l in registered_layers()]
         self.assertNotIn('IThemeCustomizer', layers)
+
+    def test_site_properties_unregistered(self):
+        site_properties = self.portal['portal_properties'].site_properties
+        self.assertFalse(hasattr(site_properties, 'show_header_text'))
+        self.assertFalse(hasattr(site_properties, 'show_header_logo'))

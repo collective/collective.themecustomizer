@@ -55,7 +55,7 @@ class Fixture(PloneSandboxLayer):
         self.loadZCML(package=collective.themecustomizer)
 
     def setUpPloneSite(self, portal):
-        #self.applyProfile(portal, 'collective.themecustomizer:default')
+        self.applyProfile(portal, 'collective.themecustomizer:default')
         open('/tmp/newlogo.png', 'w').write(generate_jpeg(50, 50))
         open('/tmp/background.png', 'w').write(generate_jpeg(1000, 100))
 
