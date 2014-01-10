@@ -9,11 +9,10 @@
          tal:condition="context/portal_properties/site_properties/show_header_logo|python:True"
          tal:replace="structure view/logo_tag" />
 
-
-<div id="titleHeader"
-     tal:condition="context/portal_properties/site_properties/show_header_text|python:False">
-    <div id="siteTitle" tal:content="python: view.portal_state.portal().Title()"></div>
-    <div id="siteDescription" tal:content="python: view.portal_state.portal().Description()"></div>
-</div>
+    <span id="header-text"
+          tal:condition="context/portal_properties/site_properties/show_header_text|python:False">
+      <span id="portal-title" tal:content="python: view.portal_state.portal().Title()" />
+      <span id="portal-description" tal:content="python: view.portal_state.portal().Description()" />
+    </span>
 
 </a>
