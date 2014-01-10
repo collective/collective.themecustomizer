@@ -7,14 +7,14 @@ from zope.interface import Interface
 
 
 class IThemeCustomizer(Interface):
-    """Layer especifico para este add-on.
+    """A layer specific for this add-on product.
     """
 
 
 class ISiteSchema(IBaseSiteSchema):
 
     show_header_text = schema.Bool(
-        title=_(u'Display text in Header'),
+        title=_(u'Display text in header'),
         description=_(u'Displays site title and description on every site page.'),
         required=False,
         default=False,
@@ -22,14 +22,14 @@ class ISiteSchema(IBaseSiteSchema):
 
     image = schema.Bytes(
         title=_(u'Logo image'),
-        description=_(u'The image you upload will replace current site\'s logo. '
-                      'Once saved, if you want to get back the original one, just'
-                      'remove your chosen image.'),
+        description=_(u'The image you upload will replace default site logo. '
+                      u'Once saved, if you want to get back the original '
+                      u'one, just remove your chosen image.'),
         required=False,
     )
 
     show_header_logo = schema.Bool(
-        title=_(u'Display logo in Header'),
+        title=_(u'Display logo in header'),
         description=_(u''),
         required=False,
         default=True,
