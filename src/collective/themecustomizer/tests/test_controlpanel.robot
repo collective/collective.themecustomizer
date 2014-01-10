@@ -10,8 +10,8 @@ Suite Teardown  Close all browsers
 
 ${site_title}  My Plone Site!
 ${site_description}  This is a theme customized Plone site
-${site_title_id}  siteTitle
-${site_description_id}  siteDescription
+${site_title_id}  portal-title
+${site_description_id}  portal-description
 
 *** Test cases ***
 
