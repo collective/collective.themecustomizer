@@ -9,7 +9,6 @@ from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 from StringIO import StringIO
 
-import os
 import random
 
 
@@ -58,10 +57,6 @@ class Fixture(PloneSandboxLayer):
         self.applyProfile(portal, 'collective.themecustomizer:default')
         open('/tmp/newlogo.png', 'w').write(generate_jpeg(50, 50))
         open('/tmp/background.png', 'w').write(generate_jpeg(1000, 100))
-
-    def tearDownPloneSite(self, portal):
-        os.remove('/tmp/newlogo.png')
-        os.remove('/tmp/background.png')
 
 FIXTURE = Fixture()
 
