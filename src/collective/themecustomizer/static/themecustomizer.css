@@ -1,0 +1,16 @@
+#portal-logo {
+	display: table;
+}
+#portal-logo img {
+	display: table-cell;
+}
+#header-text {
+	display: table-cell;
+	padding-left: 1em;
+	vertical-align: middle;
+}
+#portal-title {
+	display: block;
+	font-size: 250%;
+	font-weight: bold;
+}

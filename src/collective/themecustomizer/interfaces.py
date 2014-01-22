@@ -36,7 +36,7 @@ class ISiteSchema(IBaseSiteSchema):
     )
 
     background = schema.Bytes(
-        title=_(u'Header background image'),
+        title=_(u'Background image'),
         description=_(u''),
         required=False,
     )
