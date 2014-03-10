@@ -9,32 +9,32 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: pt-BR\n"
+"Language-Name: Português do Brasil\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
 #: ./interfaces.py:32
 msgid "Display logo in Header"
-msgstr ""
+msgstr "Exibir Logo no cabeçalho"
 
 #: ./interfaces.py:17
 msgid "Display text in Header"
-msgstr ""
+msgstr "Exibir texto no cabeçalho"
 
 #: ./interfaces.py:18
 msgid "Displays site title and description on every site page."
-msgstr ""
+msgstr "Exibe o título e descrição do Portal no cabeçalho de todas as páginas."
 
 #: ./interfaces.py:39
 msgid "Header background image"
-msgstr ""
+msgstr "Imagem de fundo"
 
 #: ./interfaces.py:24
 msgid "Logo image"
-msgstr ""
+msgstr "Imagem do logo"
 
 #: ./interfaces.py:25
 msgid "The image you upload will replace current site's logo. Once saved, if you want to get back the original one, justremove your chosen image."
-msgstr ""
+msgstr "A imagem enviada irá substituir o logo original do portal. Depois de salvo, caso deseje, basta remover a imagem enviada."
 
