@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
-
 from plone import api
 from plone.app.layout.viewlets.common import LogoViewlet as BaseViewlet
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class LogoViewlet(BaseViewlet):
-    """ Custom plone.logo viewlet to show/hide logo image and
-    site title and description
-    """
+
+    """Custom plone.logo viewlet to show portal logo, title and description."""
 
     index = ViewPageTemplateFile('templates/logo.pt')
 
@@ -35,10 +33,30 @@ class LogoViewlet(BaseViewlet):
 
             self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle)
 
+    def show_logo(self):
+        """Return the value of the 'show_header_logo' site property."""
+        pprops = api.portal.get_tool('portal_properties')
+        sprops = pprops.site_properties
+        return getattr(sprops, 'show_header_logo', True)
+
+    def show_portal_title(self):
+        """Return the value of the 'show_header_text' site property."""
+        pprops = api.portal.get_tool('portal_properties')
+        sprops = pprops.site_properties
+        return getattr(sprops, 'show_header_text', False)
+
+    def get_portal_title(self):
+        """Return portal title."""
+        return api.portal.get().title
+
+    def get_portal_description(self):
+        """Return portal description."""
+        return api.portal.get().description
+
 
 class HeaderViewlet(BaseViewlet):
-    """ Custom plone.header viewlet to show/hide background image
-    """
+
+    """Custom plone.header viewlet to show/hide background image."""
 
     def logo_background_style(self):
         portal = api.portal.get()
