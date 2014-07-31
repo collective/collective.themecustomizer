@@ -75,18 +75,17 @@ The package overrides ``plone.logo`` and ``plone.header`` viewlets (via a
 custom **browserlayer**) respecting their default behavior, in case no
 customization was made yet.
 
-
 Using with Diazo
 ----------------
 
 To use themecustomizer with Diazo you can add some lines to your rules.xml, to
-change the HTML when the background image is in use:
+change the HTML when the background image is in use::
 
-<!-- Themecustomizer rules -->
-<rules css:if-not-content="#portal-header[style='']">
-    <copy attributes="style" css:content="#portal-header" css:theme="header" />
-    <merge attributes="class" css:content="#portal-header" css:theme="header" />
-</rules>
+    <!-- Themecustomizer rules -->
+    <rules css:if-not-content="#portal-header[style='']">
+      <copy attributes="style" css:content="#portal-header" css:theme="header" />
+      <merge attributes="class" css:content="#portal-header" css:theme="header" />
+    </rules>
 
 The first rule will apply themecustomizer background image to your theme HTML. In the 
 example above, the background image will be added to <header> tag. You can change 
@@ -97,13 +96,14 @@ The second rule will add an aditional class to the tag when the themecustomizer 
 is in use. With this class you can disable your theme original background image when
 user select another imagem using theme customizer.
 
-HTML:
-<header style="background-image: url(http://localhost:8080/Plone/background.png)" 
-class="customizer-background">
+HTML::
 
-CSS:
-header {background: url("img/background.jpg");}
-.customizer-background {background: transparent;}
+    <header class="customizer-background" style="background-image: url(http://localhost:8080/Plone/background.png)">
+
+CSS::
+
+    header {background: url("img/background.jpg");}
+    .customizer-background {background: transparent;}
 
 
 To-do list
