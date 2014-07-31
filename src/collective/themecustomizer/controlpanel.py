@@ -74,7 +74,7 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
             return True
         # Does image already exists?
         content = [i.getId() for i in self.portal.objectValues()]
-        if not filename in content:
+        if filename not in content:
             self.portal.manage_addImage(filename, image, filename)
             return True
         else:
