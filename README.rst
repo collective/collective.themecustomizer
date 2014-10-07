@@ -21,6 +21,10 @@ Mostly Harmless
     :alt: coveralls badge
     :target: https://coveralls.io/r/collective/collective.themecustomizer
 
+.. image:: https://pypip.in/d/collective.themecustomizer/badge.png
+    :target: https://pypi.python.org/pypi/collective.themecustomizer
+    :alt: Downloads
+
 Got an idea? Found a bug? Let us know by `opening a support ticket`_.
 
 .. _`opening a support ticket`: https://github.com/collective/collective.themecustomizer/issues
@@ -134,10 +138,15 @@ Not entirely unlike
     If you want to install it you'll have to manually add ``elementtree``
     to the ``eggs`` section in your buildout file.
 
+`ftw.subsite`_
+    Provides a Subsite content type for embedding another website within a Plone site.
+    It does this by defining it as navigation root and providing some additional functionality like custom language, CSS and logo.
+
 `Products.CustomOverrides`_
     Allows content managers to inject custom stylesheets and Javascript
     that will be added to choosen folder and its descendants.
     It requieres CSS and JS knowledge.
 
 .. _`CSSManager`: https://pypi.python.org/pypi/Products.CSSManager
+.. _`ftw.subsite`: https://pypi.python.org/pypi/ftw.subsite
 .. _`Products.CustomOverrides`: https://pypi.python.org/pypi/Products.CustomOverrides
