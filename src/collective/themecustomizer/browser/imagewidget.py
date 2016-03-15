@@ -28,7 +28,7 @@ class ImageWidget(FileWidget):
         return value
 
     def hasInput(self):
-        return ((self.name + '.used' in self.request.form)
-                or
-                (self.name in self.request.form)
-                ) and not self.request.form.get(self.name + '.nochange', '')
+        return (
+            (self.name + '.used' in self.request.form) or
+            (self.name in self.request.form)
+        ) and not self.request.form.get(self.name + '.nochange', '')
