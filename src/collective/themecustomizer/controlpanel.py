@@ -8,11 +8,13 @@ from Products.CMFDefault.formlib.schema import ProxyFieldProperty
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
-from zope.component import adapts
+from zope.component import adapter
 from zope.formlib import form
-from zope.interface import implements
+from zope.interface import implementer
 
 
+@adapter(IPloneSiteRoot)
+@implementer(ISiteSchema)
 class SiteControlPanelAdapter(SchemaAdapterBase):
     """This is a copy of p.a.controlpanel.site.SiteControlPanelAdapter
     with the additional code for the fields we are adding as theme
@@ -20,9 +22,6 @@ class SiteControlPanelAdapter(SchemaAdapterBase):
     """
 
     # TODO: Move this code to theme controlpanel?
-
-    adapts(IPloneSiteRoot)
-    implements(ISiteSchema)
 
     def __init__(self, context):
         super(SiteControlPanelAdapter, self).__init__(context)
