@@ -2,10 +2,11 @@
 
 from collective.themecustomizer.browser.imagewidget import ImageWidget
 from collective.themecustomizer.testing import INTEGRATION_TESTING
-from zope.publisher.browser import TestRequest
 from zope import schema
+from zope.publisher.browser import TestRequest
 
 import unittest
+
 
 RENDERED = u'\n  <input type="hidden" value="" name="field.foo.used" id="field.foo.used" />\n  \
 <div style="padding-top: 1em;">\n    <input type="radio" value="nochange" checked="checked" \
