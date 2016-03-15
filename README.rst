@@ -13,17 +13,14 @@ of a Plone site theme in an intuitive interface known by any site administrator.
 Mostly Harmless
 ===============
 
-.. image:: https://secure.travis-ci.org/collective/collective.themecustomizer.png?branch=master
-    :alt: Travis CI badge
+.. image:: http://img.shields.io/pypi/v/collective.themecustomizer.svg
+    :target: https://pypi.python.org/pypi/collective.themecustomizer
+
+.. image:: https://img.shields.io/travis/collective/collective.themecustomizer/master.svg
     :target: http://travis-ci.org/collective/collective.themecustomizer
 
-.. image:: https://coveralls.io/repos/collective/collective.themecustomizer/badge.png?branch=master
-    :alt: coveralls badge
+.. image:: https://img.shields.io/coveralls/collective/collective.themecustomizer/master.svg
     :target: https://coveralls.io/r/collective/collective.themecustomizer
-
-.. image:: https://pypip.in/d/collective.themecustomizer/badge.png
-    :target: https://pypi.python.org/pypi/collective.themecustomizer
-    :alt: Downloads
 
 Got an idea? Found a bug? Let us know by `opening a support ticket`_.
 
@@ -83,7 +80,9 @@ Using with Diazo
 ----------------
 
 To use themecustomizer with Diazo you can add some lines to your rules.xml, to
-change the HTML when the background image is in use::
+change the HTML when the background image is in use:
+
+.. code-block:: xml
 
     <!-- Themecustomizer rules -->
     <rules css:if-not-content="#portal-header[style='']">
@@ -91,20 +90,24 @@ change the HTML when the background image is in use::
       <merge attributes="class" css:content="#portal-header" css:theme="header" />
     </rules>
 
-The first rule will apply themecustomizer background image to your theme HTML. In the 
-example above, the background image will be added to <header> tag. You can change 
-css:theme="header" to wharever you want to show the themecustomizer image, like body 
+The first rule will apply themecustomizer background image to your theme HTML. In the
+example above, the background image will be added to <header> tag. You can change
+css:theme="header" to wharever you want to show the themecustomizer image, like body
 or footer.
 
-The second rule will add an aditional class to the tag when the themecustomizer image 
+The second rule will add an aditional class to the tag when the themecustomizer image
 is in use. With this class you can disable your theme original background image when
 user select another imagem using theme customizer.
 
-HTML::
+HTML:
+
+.. code-block:: xml
 
     <header class="customizer-background" style="background-image: url(http://localhost:8080/Plone/background.png)">
 
-CSS::
+CSS:
+
+.. code-block:: css
 
     header {background: url("img/background.jpg");}
     .customizer-background {background: transparent;}
@@ -130,8 +133,8 @@ Not entirely unlike
 ===================
 
 `CSSManager`_
-    Provides a simple interface to tweak logo and CSS properties by 
-    overriding old ``base_properties`` sheet, which is not used by 
+    Provides a simple interface to tweak logo and CSS properties by
+    overriding old ``base_properties`` sheet, which is not used by
     Plone 4 default Sunburst theme.
     Although it works if you choose **Plone Classic Theme** in a Plone 4 site
     theme settings.

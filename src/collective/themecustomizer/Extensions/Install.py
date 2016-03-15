@@ -2,6 +2,7 @@
 
 from plone import api
 
+
 PROPERTIES = (
     'show_header_logo',
     'show_header_text',
